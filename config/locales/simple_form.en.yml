@@ -1,0 +1,27 @@
+en:
+  simple_form:
+    default:
+      save: "Save"
+      back: "Back"
+      delete: "Delete"
+      status: "Status"
+    vehicles:
+      vehicles: "Vehicles"
+      new_vehicle: "New Vehicle"
+      name: "Vehicle Name"
+      code: "Code"
+      brand: "Brand"
+      model: "Model"
+      model_year: "Model Year"
+      class: "Vehicle Class"
+      fuel_capacity: "Fuel Capacity"
+      fuel_type: "Fuel Type"
+      purchase_date: "Purchase Date"
+    drivers:
+      drivers: "Drivers"
+      name: "Name"
+      surname: "Surname"
+      b_date: "Birth Date"
+      tc: "Identification Number"
+      phone: "Phone"
+      address: "Address"

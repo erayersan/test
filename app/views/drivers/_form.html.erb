@@ -1,0 +1,55 @@
+<%= form_for(driver) do |form| %>
+  <% if driver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this driver from being saved:</h2>
+      <ul>
+        <% driver.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row task">
+    <div class="col-md-12 col-sm-12 col-xs-12 px-30 margin-bottom-20">
+      <div class="row">
+        <div class="col-md-2">
+          <%= form.label t("simple_form.drivers.name") %>
+          <%= form.text_field :name%>
+        </div>
+        <div class="col-md-2">
+          <%= form.label t("simple_form.drivers.surname") %>
+          <%= form.text_field :surname%>
+        </div>
+        <div class="col-md-2">
+          <%= form.label t("simple_form.drivers.tc") %>
+          <%= form.text_field :tc_no %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <%= form.label t("simple_form.drivers.phone") %>
+          <%= form.text_field :phone %>
+        </div>
+        <div class="col-md-2">
+          <%= form.label t("simple_form.drivers.b_date") %>
+          <%= form.text_field :birth_date, "data-provide" => 'datepicker' %>
+        </div>
+        <div class="col-md-2">
+          <%= form.label t("simple_form.drivers.address") %>
+          <%= form.text_area :address %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12 actions">
+          <%= form.submit %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.datepicker').datepicker();
+    });
+</script>

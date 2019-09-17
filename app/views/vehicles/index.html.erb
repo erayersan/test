@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h4><%= t("simple_form.vehicles.vehicles") %></h4>
+  <table class="table">
+    <thead>
+    <tr>
+      <th class="col-md-1"><%= t("simple_form.vehicles.code") %></th>
+      <th class="col-md-2"><%= t("simple_form.vehicles.brand") %></th>
+      <th class="col-md-2"><%= t("simple_form.vehicles.model") %></th>
+      <th class="col-md-2"><%= t("simple_form.vehicles.model_year") %></th>
+      <th class="col-md-2"><%= t("simple_form.vehicles.class") %></th>
+      <th class="col-md-2"><%= t("simple_form.vehicles.fuel_capacity") %></th>
+      <th class="col-md-2"><%= t("simple_form.vehicles.fuel_type") %></th>
+      <th class="col-md-2"><%= t("simple_form.vehicles.purchase_date") %></th>
+      <th class="col-md-2"><%= t("simple_form.default.status") %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.code %></td>
+        <td><%= vehicle.vehicle_class %></td>
+        <td><%= vehicle.brand %></td>
+        <td><%= vehicle.model %></td>
+        <td><%= vehicle.model_year %></td>
+        <td><%= vehicle.fuel_capacity %></td>
+        <td><%= vehicle.fuel_type %></td>
+        <td><%= vehicle.purchase_date %></td>
+        <td><%= vehicle.status %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Vehicle', new_vehicle_path %>
+</div>

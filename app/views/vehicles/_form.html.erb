@@ -1,0 +1,71 @@
+<%= form_for(vehicle) do |form| %>
+<% if vehicle.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+    <ul>
+      <% vehicle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="row task">
+  <div class="col-md-12 col-sm-12 col-xs-12 px-30 margin-bottom-20">
+    <div class="row">
+      <div class="col-md-2">
+        <%= form.label t("simple_form.vehicles.name") %>
+        <%= form.text_field :name%>
+      </div>
+      <div class="col-md-2">
+        <%= form.label t("simple_form.vehicles.code") %>
+        <%= form.text_field :code%>
+      </div>
+      <div class="col-md-2">
+        <%= form.label t("simple_form.vehicles.brand") %>
+        <%= form.text_field :brand %>
+      </div>
+      <div class="col-md-2">
+        <%= form.label t("simple_form.vehicles.model") %>
+        <%= form.text_field :model %>
+      </div>
+      <div class="col-md-2">
+        <%= form.label t("simple_form.vehicles.model_year") %>
+        <%= form.text_field :model_year %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <%= form.label t("simple_form.vehicles.class") %>
+        <%= form.text_field :vehicle_class %>
+      </div>
+      <div class="col-md-2">
+        <%= form.label t("simple_form.vehicles.fuel_capacity") %>
+        <%= form.text_field :fuel_capacity %>
+      </div>
+      <div class="col-md-2">
+        <%= form.label t("simple_form.vehicles.fuel_type") %>
+        <%= form.text_field :fuel_type %>
+      </div>
+      <div class="col-md-2">
+        <%= form.label t("simple_form.vehicles.purchase_date") %>
+        <%= form.date_field :purchase_date %>
+      </div>
+      <div id="driver_id" class="col-md-2">
+        <%= form.label "eray" %>
+        <%= form.select :driver_id, avaliable_driver, "initial-text" => @vehicle.driver_id, "initial-id" => @vehicle.driver_id %>
+      </div>
+
+      <div class="col-md-2">
+        <%= form.label t("simple_form.default.status") %>
+        <%= form.text_field :status %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12 actions">
+        <%= form.submit %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

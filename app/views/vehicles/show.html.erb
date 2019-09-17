@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<h4><i class="fa fa-truck fa-3x"></i> <%= @vehicle.code %></h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>vehicle_class</th>
+      <td><%= @vehicle.vehicle_class %></td>
+      <th>brand</th>
+      <td><%= @vehicle.brand %></td>
+      <th>model</th>
+      <td><%= @vehicle.model %></td>
+    </tr>
+    <tr>
+      <th>model_year</th>
+      <td><%= @vehicle.model_year %></td>
+      <th>fuel_capacity</th>
+      <td><%= @vehicle.fuel_capacity %></td>
+      <th>fuel_type</th>
+      <td><%= @vehicle.fuel_type %></td>
+    </tr>
+    <tr>
+      <th>status</th>
+      <td><%= @vehicle.status %></td>
+      <th>purchase_date</th>
+      <td><%= @vehicle.purchase_date %></td>
+      <th></th>
+      <td></td>
+    </tr>
+  </thead>
+</table>
+<p>
+  <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+  <%= link_to 'Back', vehicles_path %>
+</p>
+<h5>Yorumlar</h5>
